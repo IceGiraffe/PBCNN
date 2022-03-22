@@ -2,9 +2,9 @@ import os
 import pickle
 import shutil
 import time
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 import numpy as np
-# import seaborn as sns
+import seaborn as sns
 import tensorflow as tf
 from absl import logging, app
 from sklearn.metrics import classification_report

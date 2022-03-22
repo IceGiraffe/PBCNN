@@ -8,20 +8,22 @@ import time
 from tools import tool2
 from tools.tool3 import shuffle_by_col_and_mixed, str_mongo_to_sparse_tfrecord, oversample, final_data
 
+
 def pcap_to_str_mongo():
-	print("#### attack pcap ---> mongo ####")
-	print("processing...")
-    files = ['./data_cache/raw_attacker_packets/bruteforce-xss_22-02.pcap',
-             './data_cache/raw_attacker_packets/dos-goldeneye_15-02.pcap',
-             './data_cache/raw_attacker_packets/sql-injection_22-02.pcap',
-             './data_cache/raw_attacker_packets/bruteforce-xss_23-02.pcap',
-             './data_cache/raw_attacker_packets/ftp-bruteforce_14-02.pcap',
-             './data_cache/raw_attacker_packets/dos-slowloris_15-02.pcap',
-             './data_cache/raw_attacker_packets/infiltration_28-02.pcap',
-             './data_cache/raw_attacker_packets/sql-injection_23-02.pcap',
-             './data_cache/raw_attacker_packets/bruteforce-web_22-02.pcap',
-             './data_cache/raw_attacker_packets/bot_02-03.pcap',
-             './data_cache/raw_attacker_packets/dos-slowhttptest_16-02.pcap',
+    print("#### attack pcap ---> mongo ####")
+    print("processing...")
+    
+    files = ['./data_cache/raw_attacker_packets/bruteforce-xss_22-02.pcap',\
+             './data_cache/raw_attacker_packets/dos-goldeneye_15-02.pcap',\
+             './data_cache/raw_attacker_packets/sql-injection_22-02.pcap',\
+             './data_cache/raw_attacker_packets/bruteforce-xss_23-02.pcap',\
+             './data_cache/raw_attacker_packets/ftp-bruteforce_14-02.pcap',\
+             './data_cache/raw_attacker_packets/dos-slowloris_15-02.pcap',\
+             './data_cache/raw_attacker_packets/infiltration_28-02.pcap',\
+             './data_cache/raw_attacker_packets/sql-injection_23-02.pcap',\
+             './data_cache/raw_attacker_packets/bruteforce-web_22-02.pcap',\
+             './data_cache/raw_attacker_packets/bot_02-03.pcap',\
+             './data_cache/raw_attacker_packets/dos-slowhttptest_16-02.pcap',\
              './data_cache/raw_attacker_packets/bruteforce-web_23-02.pcap']
     for fi in files:
         tool2.save_str_mongo(pcap_file=fi,
@@ -44,8 +46,8 @@ def pcap_to_str_mongo():
 
 
 def main():
-	print("begin preprocessing...")
-	# process benign pcap files and save into mogodb
+    print("begin preprocessing...")
+    # process benign pcap files and save into mogodb
     save_benign_mongo(pcap_dir='/home/fgtc/Documents/notebooks/data_cache/raw_benign_packets',
                       label='benign',
                       database_name='PacketInString')
