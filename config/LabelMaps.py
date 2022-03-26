@@ -1,4 +1,4 @@
-
+# 网络流量label
 
 label_maps = {
         'ftp-bruteforce': 0,
